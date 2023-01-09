@@ -1,0 +1,27 @@
+{
+  "name": "employee-tracker_c12",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yerimechoi/Employee-Tracker_C12.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yerimechoi/Employee-Tracker_C12/issues"
+  },
+  "homepage": "https://github.com/yerimechoi/Employee-Tracker_C12#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
