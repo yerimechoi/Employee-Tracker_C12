@@ -65,13 +65,13 @@ function initialQuestions() {
 function viewAllEmployees() {
     const sql = `SELECT employee.id,
                  employee.fullName AS name,
-                 role.title AS title,
+                 roles.title AS title,
                  department.department AS department,
-                 role.salary AS salary,
+                 roles.salary AS salary,
                  CONCAT(manager.fullName) AS manager
                  FROM employee
-                 LEFT JOIN role ON employee.role_id = role.id
-                 LEFT JOIN department ON role.department_id = department.id
+                 LEFT JOIN roles ON employee.role_id = roles.id
+                 LEFT JOIN department ON roles.department_id = department.id
                  LEFT JOIN employee manager ON employee.manager_id = manager.id
                  ORDER BY employee.id`;
 
@@ -118,12 +118,12 @@ function addEmployee() {
 };
 
 function viewAllRoles() {
-    const sql = `SELECT role.id, 
-    role.title AS title, 
+    const sql = `SELECT roles.id, 
+    roles.title AS title, 
     department.department AS department, 
-    role.salary AS salary 
-    FROM role 
-    LEFT JOIN department ON role.department_id = department.id`;
+    roles.salary AS salary 
+    FROM roles 
+    LEFT JOIN department ON roles.department_id = department.id`;
 
     db.query(sql, (err, res) => {
         if (err) throw err;
@@ -147,7 +147,7 @@ function updateEmployeeRole() {
             name: `salary`,
         },
     ]).then((answer) => {
-        const sql = `INSERT INTO role (name, salary) VALUES (?, ?)`
+        const sql = `INSERT INTO roles (name, salary) VALUES (?, ?)`
         userInput = [answer.name, answer.salary];
 
         db.query(sql, userInput, (err) => {
@@ -181,7 +181,7 @@ function addRole() {
             name: `roleDepartment`,
         }
     ]).then((answer) => {
-        const sql = `INSERT INTO role (title, salary, roleDepartment) VALUES (?, ?, ?)`
+        const sql = `INSERT INTO roles (title, salary, roleDepartment) VALUES (?, ?, ?)`
         userInput = [answer.title, answer.salary, answer.roleDepartment];
 
         db.query(sql, userInput, (err) => {
@@ -216,7 +216,7 @@ function addDepartment() {
             name: `department`
         },
     ]).then((answer) => {
-        const sql = `INSERT INTO role (department) VALUES (?)`
+        const sql = `INSERT INTO department (department) VALUES (?)`
         userInput = [answer.department];
 
         db.query(sql, userInput, (err) => {
