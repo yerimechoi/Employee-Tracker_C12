@@ -11,7 +11,7 @@ const db = mysql.createConnection(
         host: `localhost`,
         user: `root`,
         password: `moomin5454`,
-        database: `employeeTracker-db`,
+        database: `employeeTracker_db`,
     },
     console.log(`Connected to the employeeTracker_db database.`)
 );
@@ -58,6 +58,7 @@ function initialQuestions() {
                 case `Quit`:
                     console.log("Goodbye!");
                     process.exit();
+                    break;
             }
         }).catch(err => console.error(err));
 };
@@ -230,5 +231,3 @@ function addDepartment() {
         });
     });
 };
-
-initialQuestions();
