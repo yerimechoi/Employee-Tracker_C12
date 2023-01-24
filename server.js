@@ -33,7 +33,7 @@ function initialQuestions() {
             }
         ])
         .then((answer) => {
-            switch (answer.action) {
+            switch (answer.main) {
                 case `View All Employees`:
                     viewAllEmployees();
                     break;
