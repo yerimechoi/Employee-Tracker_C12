@@ -13,7 +13,7 @@ const db = mysql.createConnection(
         password: `moomin5454`,
         database: `employeeTracker_db`,
     },
-    console.log(`Connected to the employeeTracker_db database.`)
+    console.log(`Welcome to Employee Manager!`)
 );
 
 db.connect((err) => {
@@ -248,11 +248,11 @@ function addRole() {
             {
                 type: `input`,
                 message: `Which department does the role belong to? (Enter the department id associated with the role)`,
-                name: `roleDepartment`,
+                name: `department_id`,
             }
         ]).then((answer) => {
-            const sql = `INSERT INTO roles (title, salary, roleDepartment) VALUES (?, ?, ?);`
-            userInput = [answer.title, answer.salary, answer.roleDepartment];
+            const sql = `INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?);`
+            userInput = [answer.title, answer.salary, answer.department_id];
 
             db.query(sql, userInput, (err) => {
                 if (err) throw err;
