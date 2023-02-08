@@ -38,7 +38,7 @@ This project was to create a command-line application that manages employee data
   ## License
   [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-  Copyright <2021> <yerimechoi>
+  Copyright <2023> <yerimechoi>
   
   Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
   
